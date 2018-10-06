@@ -7,6 +7,7 @@ GyroTurn::GyroTurn(double anglePoint) {
 	Requires(CommandBase::drive);
 	setvalue = anglePoint;
 	TurnValue = CommandBase::drive->getAngle() - setvalue;
+
 }
 
 // Called just before this Command runs the first time
@@ -17,17 +18,18 @@ void GyroTurn::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 void GyroTurn::Execute() {
 	if (TurnValue < 0) {
-			CommandBase::drive->tankDrive(0.6, 0.3);
+			CommandBase::drive->tankDrive(0.6, -0.6);
 	}
 	else if (TurnValue > 0) {
-			CommandBase::drive->tankDrive(0.3, 0.6);
+			CommandBase::drive->tankDrive(-0.6, 0.6);
 	}
 	TurnValue = CommandBase::drive->getAngle() - setvalue;
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool GyroTurn::IsFinished() {
-	return (CommandBase::drive->getAngle() - setvalue > 3 || setvalue - CommandBase::drive->getAngle() > 3 ); // 3 is max error
+	return (CommandBase::drive->getAngle() - setvalue > 3 || setvalue - CommandBase::drive->getAngle() > 3 );
+	// 3 is max error or the degree of freedom
 }
 
 // Called once after isFinished returns true

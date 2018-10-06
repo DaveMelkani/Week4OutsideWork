@@ -22,6 +22,25 @@ constexpr int CATCH_LEFT_CAN_ID = 6; //actually 3
 constexpr int CATCH_RIGHT_CAN_ID = 7; //actually 2
 constexpr int CAMERA_CHANNEL = 0;
 
+constexpr int Pink =149;
+constexpr int Blue =149;
+constexpr int turnRightPink = 19.56;
+constexpr int turnLeftBlue = 19.56;
+
+constexpr int Red = 205.735;
+constexpr int turnRightTopRed1 = 221.12;
+constexpr int turnRightTopRed2 = 56.735;
+constexpr int turnRightTopRed3 = 19.56;
+constexpr int turnLeftBottomRed1 = 221.12;
+constexpr int turnLeftBottomRed2 = 56.735;
+constexpr int turnLeftBottomRed3 = 19.56;
+
+constexpr int middle = 64;
+constexpr int middleUp = 36;
+constexpr int middleUpRight = 45;
+constexpr int middleDown = 36;
+constexpr int middleDownRight = 45;
+
 constexpr double error = 6; // fill this in later
 constexpr double To_Switch = 168 - 19 + error;
 constexpr double Mid_Targets = 228.735 - error;
